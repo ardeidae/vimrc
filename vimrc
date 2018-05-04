@@ -223,8 +223,8 @@ set title
 set lazyredraw
 " fast terminal connection
 set ttyfast
-" add/substract alpha, hex and dec values, but not octal
-set nrformats=hex,alpha
+" add/substract only dec values
+set nrformats=
 " ignore changes in amount of white space.
 set diffopt+=iwhite
 " ~ command behaves like an operator
