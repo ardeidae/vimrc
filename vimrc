@@ -236,6 +236,23 @@ set nostartofline
 if has('spell')
 	set spelllang=fr
 endif
+" text formatting {{{
+" c: Auto-wrap comments using textwidth, inserting the current comment leader
+" automatically.
+" r: Automatically insert the current comment leader after hitting <Enter> in
+" Insert mode.
+" o: Automatically insert the current comment leader after hitting 'o' or 'O'
+" in Normal mode.
+" q: Allow formatting of comments with "gq". Note that formatting will not
+" change blank lines or lines containing only the comment leader.  A new
+" paragraph starts after such a line, or when the comment leader changes.
+" w: Trailing white space indicates a paragraph continues in the next line. A
+" line that ends in a non-white character ends a paragraph.
+" a: Automatic formatting of paragraphs.  Every time text is inserted or
+" deleted the paragraph will be reformatted. When the 'c' flag is present this
+" only happens for recognized comments.
+set formatoptions=c,r,o,q,w,a
+" }}}
 
 " }}}
 
@@ -248,7 +265,7 @@ endif
 if has('gui_running')
 	set background=dark
 	colorscheme solarized
-	call togglebg#map("<F5>")
+	" TODO call togglebg#map("<F5>")
 	" show current line
 	set guioptions=e
 	if exists('+cursorline')
@@ -261,8 +278,8 @@ else
 endif
 
 if exists('+colorcolumn')
-	" color the 80th column
-	set colorcolumn=80
+	" color textwidth column +1
+	set colorcolumn=+1
 endif
 
 " hide the mouse pointer while typing
@@ -418,14 +435,31 @@ command! RemoveEmptyLinesBlocks call Preserve("%g/^$/,/./-j")
 command! ReIndent call Preserve("normal gg=G")
 
 " switch between number and relative number
-function! g:ToggleNuMode()
-	if (&relativenumber == 1)
+function! g:ToggleNumberMode()
+	if &relativenumber
 		set number
 		set number?
 	else
 		set relativenumber
 		set relativenumber?
 	endif
+endfunc
+
+" switch textwidth
+function! g:ToggleTextWidth()
+	if &textwidth
+		let s:save_textwidth = &textwidth
+		set textwidth=0
+	else
+		if exists("s:save_textwidth")
+			let &textwidth = s:save_textwidth
+			unlet s:save_textwidth
+		else
+			" default value if 'textwidth' is zero the first time
+			set textwidth=80
+		endif
+	endif
+	set textwidth?
 endfunc
 
 " }}}
@@ -443,7 +477,7 @@ vnoremap <F1> <Esc>
 nnoremap <F1> :set invlist<CR>:set list?<CR>
 
 " switch between number and relative number
-nnoremap <silent> <F2> :call g:ToggleNuMode()<CR>
+nnoremap <silent> <F2> :call g:ToggleNumberMode()<CR>
 
 if has('spell')
 	" enable / disable spell checking
@@ -452,6 +486,9 @@ endif
 
 " enable / disable wrapping
 nnoremap <silent> <F4> :set invwrap<CR>:set wrap?<CR>
+
+" enable / disable textwidth
+nnoremap <silent> <F5> :call g:ToggleTextWidth()<CR>
 
 " Underline the current line with '='
 nnoremap <silent> <Leader>u= yypVr=
@@ -478,3 +515,13 @@ nnoremap <Leader>b<Space> :RemoveEmptyLinesBlocks<CR>
 
 " }}}
 
+" autocmd {{{
+
+" only do this part when compiled with support for autocommands
+if has("autocmd")
+	" gqip to format paragraph, see :h text-objects
+	autocmd FileType text setlocal textwidth=80 formatoptions+=t
+
+endif
+
+" }}}
