@@ -38,6 +38,8 @@ nnoremap <LEADER>bc :BundleClean<CR>
 
 " precision colorscheme for the vim text editor
 Bundle 'altercation/vim-colors-solarized'
+" a port of the monokai scheme for TextMate
+Bundle 'vim-scripts/molokai'
 
 " }}}
 
