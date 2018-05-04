@@ -245,13 +245,12 @@ if has('syntax')
 endif
 
 if has('gui_running')
-	set background=dark
+	set background=light
 	let g:solarized_termtrans=1
 	let g:solarized_termcolors=256
 	let g:solarized_visibility="high"
 	let g:solarized_contrast="high"
 	colorscheme solarized
-	" TODO call togglebg#map("<F5>")
 	" show current line
 	set guioptions=e
 	if exists('+cursorline')
@@ -434,6 +433,17 @@ function! g:ToggleNumberMode()
 	endif
 endfunc
 
+" switch between light and dark background
+function! g:ToggleBackground()
+	if exists('+background')
+		if &background=='light'
+			set background=dark
+		else
+			set background=light
+		endif
+	endif
+endfunc
+
 " switch textwidth
 function! g:ToggleTextWidth()
 	if &textwidth
@@ -480,22 +490,25 @@ nnoremap <F1> :set invlist<CR>:set list?<CR>
 " switch between number and relative number
 nnoremap <silent> <F2> :call g:ToggleNumberMode()<CR>
 
+" switch between light and dark background
+nnoremap <silent> <F3> :call g:ToggleBackground()<CR>
+
 if has('spell')
 	" enable / disable spell checking
-	nnoremap <silent> <F3> :set invspell<CR>:set spell?<CR>
+	nnoremap <silent> <F4> :set invspell<CR>:set spell?<CR>
 endif
 
 " enable / disable wrapping
-nnoremap <silent> <F4> :set invwrap<CR>:set wrap?<CR>
+nnoremap <silent> <F5> :set invwrap<CR>:set wrap?<CR>
 
 " enable / disable textwidth
-nnoremap <silent> <F5> :call g:ToggleTextWidth()<CR>
+nnoremap <silent> <F6> :call g:ToggleTextWidth()<CR>
 
 " toggle paste mode
-set pastetoggle=<F6>
+set pastetoggle=<F7>
 
 " enable / disable virtual edit.
-nnoremap <silent> <F7> :call g:ToggleVirtualEdit()<CR>
+nnoremap <silent> <F8> :call g:ToggleVirtualEdit()<CR>
 
 " Underline the current line with '='
 nnoremap <silent> <Leader>u= yypVr=
