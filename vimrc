@@ -103,7 +103,6 @@ nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>nc :NERDTreeClose<CR>
 " }}}
 
-
 " vim-fugitive {{{
 " a Git wrapper so awesome, it should be illegal
 Bundle 'https://github.com/tpope/vim-fugitive.git'
@@ -183,6 +182,9 @@ Bundle 'https://github.com/hail2u/vim-css3-syntax.git'
 
 " vim syntax for LESS (dynamic CSS)
 Bundle 'https://github.com/groenewege/vim-less.git'
+
+" Vim syntax file & snippets for Docker's Dockerfile
+Bundle "https://github.com/ekalinin/Dockerfile.vim.git"
 
 " }}}
 
