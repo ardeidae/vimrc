@@ -191,6 +191,9 @@ Bundle 'https://github.com/groenewege/vim-less.git'
 " Vim syntax file & snippets for Docker's Dockerfile
 Bundle "https://github.com/ekalinin/Dockerfile.vim.git"
 
+" Add additional support for Ansible in VIM
+Bundle "https://github.com/chase/vim-ansible-yaml.git"
+
 " }}}
 
 filetype plugin indent on
