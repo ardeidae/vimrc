@@ -201,6 +201,7 @@ set modeline
 " lines to read for modeline
 set modelines=5
 " don't flash
+set t_vb=
 set visualbell
 " don't beep
 set noerrorbells
@@ -253,6 +254,10 @@ endif
 
 if has('gui_running')
 	set background=dark
+	let g:solarized_termtrans=1
+	let g:solarized_termcolors=256
+	let g:solarized_visibility="high"
+	let g:solarized_contrast="high"
 	colorscheme solarized
 	" TODO call togglebg#map("<F5>")
 	" show current line
