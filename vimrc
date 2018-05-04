@@ -235,14 +235,6 @@ set nostartofline
 if has('spell')
 	set spelllang=fr
 endif
-" text formatting {{{
-" w: Trailing white space indicates a paragraph continues in the next line. A
-" line that ends in a non-white character ends a paragraph.
-" a: Automatic formatting of paragraphs.  Every time text is inserted or
-" deleted the paragraph will be reformatted. When the 'c' flag is present this
-" only happens for recognized comments.
-set formatoptions+=wa
-" }}}
 
 " }}}
 
@@ -542,9 +534,16 @@ if has("autocmd")
 	autocmd FileType yaml setlocal expandtab
 	autocmd Filetype less,css setlocal iskeyword+=-
 	autocmd Filetype php setlocal iskeyword+=$
+	" text formatting {{{
 	" gqip to format paragraph, see :h text-objects
 	" t: Auto-wrap text using textwidth
-	autocmd FileType text setlocal textwidth=80 formatoptions+=t
+	" w: Trailing white space indicates a paragraph continues in the next
+	" line. A line that ends in a non-white character ends a paragraph.
+	" a: Automatic formatting of paragraphs.  Every time text is inserted or
+	" deleted the paragraph will be reformatted. When the 'c' flag is present
+	" this only happens for recognized comments.
+	" }}}
+	autocmd FileType text setlocal textwidth=80 formatoptions+=twa
 
 	" treat .rss files as XML
 	autocmd BufNewFile,BufRead *.rss setfiletype xml
