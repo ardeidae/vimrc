@@ -199,6 +199,8 @@ Plugin 'https://github.com/vim-scripts/ferm.vim.git'
 
 " }}}
 
+" }}}
+
 call vundle#end()
 
 filetype plugin indent on
@@ -247,6 +249,8 @@ set nostartofline
 if has('spell')
 	set spelllang=fr
 endif
+
+set tabpagemax=100
 
 " }}}
 
