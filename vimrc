@@ -154,7 +154,7 @@ let g:syntastic_enable_highlighting=1
 " Passive Java checking. To check, :SyntasticCheck.
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['java'] }
+                           \ 'passive_filetypes': ['java', 'c', 'cpp'] }
 " required tools to check syntax:
 " c: gcc
 " c++: g++
@@ -564,6 +564,9 @@ nnoremap <Leader>q gqip
 
 " fold xml/html tag
 nnoremap <Leader>ft Vatzf
+
+" run a makefile
+nnoremap <Leader>m :make<CR>
 
 " make the current file executable
 nnoremap <Leader>x :w<CR>:!chmod +x %<CR>:e<CR>
