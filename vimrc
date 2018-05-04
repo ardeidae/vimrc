@@ -23,8 +23,8 @@ filetype off
 if has('unix')
 	set runtimepath+=~/.vim/bundle/vundle/
 else
-endif
 	set runtimepath+=~/_vim/bundle/vundle/
+endif
 call vundle#rc()
 
 " Set leader to , must come before any <leader> mappings
