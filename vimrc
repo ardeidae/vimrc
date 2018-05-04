@@ -34,9 +34,9 @@ let mapleader=","
 
 " Vundle manages Vundle {{{
 Bundle 'gmarik/vundle'
-nnoremap <LEADER>bi :BundleInstall<CR>
-nnoremap <LEADER>bu :BundleInstall!<CR> " Because this also updates
-nnoremap <LEADER>bc :BundleClean<CR>
+nnoremap <Leader>bi :BundleInstall<CR>
+nnoremap <Leader>bu :BundleInstall!<CR> " Because this also updates
+nnoremap <Leader>bc :BundleClean<CR>
 " }}}
 
 " colorschemes {{{
@@ -63,18 +63,18 @@ let g:statline_show_charcode=1
 " tabular {{{
 " Vim script for text filtering and alignment
 Bundle 'godlygeek/tabular'
-nnoremap <LEADER>t= :Tabularize /=<CR>
-vnoremap <LEADER>t= :Tabularize /=<CR>
-nnoremap <LEADER>t: :Tabularize /:\zs<CR>
-vnoremap <LEADER>t: :Tabularize /:\zs<CR>
-nnoremap <LEADER>t, :Tabularize /,\zs<CR>
-vnoremap <LEADER>t, :Tabularize /,\zs<CR>
-nnoremap <LEADER>t> :Tabularize /=>\zs<CR>
-vnoremap <LEADER>t> :Tabularize /=>\zs<CR>
-nnoremap <LEADER>t- :Tabularize /-<CR>
-vnoremap <LEADER>t- :Tabularize /-<CR>
-nnoremap <LEADER>t" :Tabularize /"<CR>
-vnoremap <LEADER>t" :Tabularize /"<CR>
+nnoremap <Leader>t= :Tabularize /=<CR>
+vnoremap <Leader>t= :Tabularize /=<CR>
+nnoremap <Leader>t: :Tabularize /:\zs<CR>
+vnoremap <Leader>t: :Tabularize /:\zs<CR>
+nnoremap <Leader>t, :Tabularize /,\zs<CR>
+vnoremap <Leader>t, :Tabularize /,\zs<CR>
+nnoremap <Leader>t> :Tabularize /=>\zs<CR>
+vnoremap <Leader>t> :Tabularize /=>\zs<CR>
+nnoremap <Leader>t- :Tabularize /-<CR>
+vnoremap <Leader>t- :Tabularize /-<CR>
+nnoremap <Leader>t" :Tabularize /"<CR>
+vnoremap <Leader>t" :Tabularize /"<CR>
 " }}}
 
 " NERDTree {{{
@@ -105,9 +105,9 @@ let NERDTreeCasadeOpenSingleChildDir=1
 " don't display these kinds of files
 let NERDTreeIgnore=[ '\.class$', '\.o$', '^\.git$', '^\.svn$' ]
 
-nnoremap <LEADER>nn :NERDTreeToggle<CR>
-nnoremap <LEADER>nf :NERDTreeFind<CR>
-nnoremap <LEADER>nc :NERDTreeClose<CR>
+nnoremap <Leader>nn :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
+nnoremap <Leader>nc :NERDTreeClose<CR>
 " }}}
 
 
@@ -140,7 +140,7 @@ Bundle 'mileszs/ack.vim'
 " http://stevengharms.com/use-ack-instead-of-grep-to-parse-text-files
 " http://betterthangrep.com/documentation/
 " http://betterthangrep.com/why-ack/
-nnoremap <SILENT> <LEADER>as :AckFromSearch<CR>
+nnoremap <silent> <Leader>as :AckFromSearch<CR>
 " }}}
 
 " }}}
@@ -232,6 +232,10 @@ set diffopt+=iwhite
 set tildeop
 " same column with commands G, H, M, L, gg...
 set nostartofline
+" spell checkin
+if has('spell')
+	set spelllang=fr
+endif
 
 " }}}
 
@@ -291,16 +295,6 @@ set shortmess=aI
 set splitbelow
 " split right
 set splitright
-
-" }}}
-
-" spell {{{
-
-if has('spell')
-	" active / désactive la correction orthographique
-	nnoremap <SILENT> <F3> :set spell!<CR> :set spell?<CR>
-	set spelllang=fr
-endif
 
 " }}}
 
@@ -369,7 +363,7 @@ set matchpairs+=<:>
 set matchpairs+==:;
 set noignorecase
 " disable search display
-nnoremap <SILENT> <LEADER>/ :nohlsearch<CR>
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
 " doesn't loop when searching
 " set nowrapscan
 
@@ -399,4 +393,61 @@ function MyFoldText()
   return line . repeat(" ",fillcharcount) . fdnfo
 endfunction
 "}}}
+
+" functions {{{
+
+function! Preserve(command)
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l=line(".")
+	let c=col(".")
+	" do the business:
+	execute a:command
+	" clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
+endfunction
+
+" remove trailing whitespaces
+command! StripTrailingWhiteSpaces call Preserve("%s/\\s\\+$//e")
+" remove empty lines
+command! RemoveEmptyLines call Preserve("%g/^\\s*$/d")
+" convert empty line blocks into one empty line
+command! RemoveEmptyLinesBlocks call Preserve("%g/^$/,/./-j")
+" reindent entire file
+command! ReIndent call Preserve("normal gg=G")
+
+" switch between number and relative number
+function! g:ToggleNuMode()
+	if (&relativenumber == 1)
+		set number
+		set number?
+	else
+		set relativenumber
+		set relativenumber?
+	endif
+endfunc
+
+" }}}
+
+
+" mappings {{{
+" disable F1 key
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
+" switch list
+nnoremap <F1> :set invlist<CR>:set list?<CR>
+
+" switch between number and relative number
+nnoremap <silent> <F2> :call g:ToggleNuMode()<CR>
+
+if has('spell')
+	" enable / disable spell checking
+	nnoremap <silent> <F3> :set invspell<CR>:set spell?<CR>
+endif
+
+" enable / disable wrapping
+nnoremap <silent> <F4> :set invwrap<CR>:set wrap?<CR>
+
+" }}}
 
