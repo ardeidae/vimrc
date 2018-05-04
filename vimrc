@@ -291,8 +291,9 @@ set listchars=tab:▸\ ,extends:❯,nbsp:·,trail:·,eol:¬,precedes:❮
 set showbreak=↪
 " smartly cut lines when list is disabled
 set linebreak
-" short messages and no intro message
-set shortmess=aI
+" short messages, message for reading a file overwrites any previous message,
+" and no intro message
+set shortmess=aOI
 " split below
 set splitbelow
 " split right
