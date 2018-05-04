@@ -249,7 +249,7 @@ if has('gui_running')
 	let g:solarized_termcolors=256
 	let g:solarized_visibility="high"
 	let g:solarized_contrast="high"
-	colorscheme solarized
+	silent! colorscheme solarized
 	" show current line
 	set guioptions=e
 	" show menu item on windows
@@ -261,7 +261,7 @@ if has('gui_running')
 	endif
 else
 	set background=dark
-	colorscheme summerfruit256
+	silent! colorscheme summerfruit256
 endif
 
 if exists('+colorcolumn')
