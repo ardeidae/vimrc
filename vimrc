@@ -278,8 +278,8 @@ set nowrap
 set scrolloff=5
 set sidescrolloff=5
 set sidescroll=1
-" display invisibles chars
-set list
+" don't display invisibles chars by default
+set nolist
 set listchars=tab:▸\ ,extends:❯,nbsp:·,trail:·,eol:¬,precedes:❮
 " show wrapped lines
 set showbreak=↪
