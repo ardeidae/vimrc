@@ -254,7 +254,7 @@ if has('gui_running')
 	set guioptions=e
 	" show menu item on windows
 	if has("win32")
-		set guioptions+=t
+		set guioptions+=T
 	endif
 	if exists('+cursorline')
 		set cursorline
