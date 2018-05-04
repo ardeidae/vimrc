@@ -49,6 +49,15 @@ Bundle 'vim-scripts/molokai'
 
 " }}}
 
+" vim-statline {{{
+" Add useful informations to Vim statusline
+Bundle 'scrooloose/vim-statline'
+let g:statline_fugitive=1
+let g:statline_filename_relative=1
+let g:statline_show_charcode=1
+" }}}
+
+
 " }}}
 
 " syntax {{{
