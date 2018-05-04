@@ -260,9 +260,8 @@ if has('gui_running')
 		set cursorline
 	endif
 else
-	set t_Co=256
-	colorscheme default
-	set background=light
+	set background=dark
+	colorscheme summerfruit256
 endif
 
 if exists('+colorcolumn')
