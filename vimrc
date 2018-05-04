@@ -567,3 +567,10 @@ if has("autocmd")
 endif
 
 " }}}
+
+" reminder {{{
+" http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+" http://vim.wikia.com/wiki/Macros
+" :h c_CTRL-F to switch to command-line window
+" :h CTRL-^ to open previously edited file
+" }}}
