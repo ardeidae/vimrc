@@ -43,6 +43,8 @@ Bundle 'https://github.com/altercation/vim-colors-solarized.git'
 Bundle 'https://github.com/vim-scripts/molokai.git'
 " summerfruit color scheme in 256 colors
 Bundle 'https://github.com/baeuml/summerfruit256.vim.git'
+" badwolf, a Vim color scheme
+Bundle 'https://github.com/sjl/badwolf.git'
 
 " }}}
 
