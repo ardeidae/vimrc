@@ -33,7 +33,7 @@ let mapleader=","
 " plugins {{{
 
 " Vundle manages Vundle {{{
-Bundle 'gmarik/vundle'
+Bundle 'git://github.com/gmarik/vundle.git'
 nnoremap <Leader>bi :BundleInstall<CR>
 nnoremap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nnoremap <Leader>bc :BundleClean<CR>
@@ -42,9 +42,9 @@ nnoremap <Leader>bc :BundleClean<CR>
 " colorschemes {{{
 
 " precision colorscheme for the vim text editor
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 " a port of the monokai scheme for TextMate
-Bundle 'vim-scripts/molokai'
+Bundle 'git://github.com/vim-scripts/molokai.git'
 
 " }}}
 
@@ -54,7 +54,7 @@ Bundle 'vim-scripts/molokai'
 
 " vim-statline {{{
 " Add useful informations to Vim statusline
-Bundle 'scrooloose/vim-statline'
+Bundle 'git://github.com/scrooloose/vim-statline.git'
 let g:statline_fugitive=1
 let g:statline_filename_relative=1
 let g:statline_show_charcode=1
@@ -62,7 +62,7 @@ let g:statline_show_charcode=1
 
 " tabular {{{
 " Vim script for text filtering and alignment
-Bundle 'godlygeek/tabular'
+Bundle 'git://github.com/godlygeek/tabular.git'
 nnoremap <Leader>t= :Tabularize /=<CR>
 vnoremap <Leader>t= :Tabularize /=<CR>
 nnoremap <Leader>t: :Tabularize /:\zs<CR>
@@ -79,7 +79,7 @@ vnoremap <Leader>t" :Tabularize /"<CR>
 
 " NERDTree {{{
 " A tree explorer plugin for vim
-Bundle 'scrooloose/nerdtree'
+Bundle 'git://github.com/scrooloose/nerdtree.git'
 " Change the NERDTree directory to the root node
 let NERDTreeChDirMode=2
 " store the bookmarks file
@@ -113,7 +113,7 @@ nnoremap <Leader>nc :NERDTreeClose<CR>
 
 " vim-fugitive {{{
 " a Git wrapper so awesome, it should be illegal
-Bundle 'tpope/vim-fugitive'
+Bundle 'git://github.com/tpope/vim-fugitive.git'
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gs :Gstatus<CR>
@@ -131,12 +131,12 @@ Bundle 'git://repo.or.cz/vcscommand'
 
 " snipmate {{{
 " implements some of TextMate's snippets features in Vim
-Bundle 'msanders/snipmate.vim'
+Bundle 'git://github.com/msanders/snipmate.vim.git'
 " }}}
 
 " ack {{{
 " better than grep
-Bundle 'mileszs/ack.vim'
+Bundle 'git://github.com/mileszs/ack.vim.git'
 " http://stevengharms.com/use-ack-instead-of-grep-to-parse-text-files
 " http://betterthangrep.com/documentation/
 " http://betterthangrep.com/why-ack/
@@ -147,12 +147,12 @@ nnoremap <silent> <Leader>as :AckFromSearch<CR>
 
 " tcomment {{{
 " comment vim-plugin that also handles embedded filetypes
-Bundle 'tomtom/tcomment_vim'
+Bundle 'git://github.com/tomtom/tcomment_vim.git'
 " }}}
 
 " syntastic
 " Syntax checking hacks for vim
-Bundle 'scrooloose/syntastic'
+Bundle 'git://github.com/scrooloose/syntastic.git'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
@@ -182,10 +182,10 @@ let g:syntastic_enable_highlighting=1
 " syntax {{{
 
 " add CSS3 syntax support to vim's built-in `syntax/css.vim`
-Bundle 'hail2u/vim-css3-syntax'
+Bundle 'git://github.com/hail2u/vim-css3-syntax.git'
 
 " vim syntax for LESS (dynamic CSS)
-Bundle 'groenewege/vim-less'
+Bundle 'git://github.com/groenewege/vim-less.git'
 
 " }}}
 
