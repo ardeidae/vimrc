@@ -283,8 +283,6 @@ set nowrap
 set scrolloff=5
 set sidescrolloff=5
 set sidescroll=1
-" edit anywhere
-set virtualedit=all
 " display invisibles chars
 set list
 set listchars=tab:▸\ ,extends:❯,nbsp:·,trail:·,eol:¬,precedes:❮
@@ -450,6 +448,18 @@ function! g:ToggleTextWidth()
 	set textwidth?
 endfunc
 
+" switch virtual edit
+function! g:ToggleVirtualEdit()
+	if &virtualedit=='all'
+		" disable virtual edit
+		set virtualedit=
+	else
+		" edit anywhere
+		set virtualedit=all
+	endif
+	set virtualedit?
+endfunc
+
 " }}}
 
 
@@ -480,6 +490,9 @@ nnoremap <silent> <F5> :call g:ToggleTextWidth()<CR>
 
 " toggle paste mode
 set pastetoggle=<F6>
+
+" enable / disable virtual edit.
+nnoremap <silent> <F7> :call g:ToggleVirtualEdit()<CR>
 
 " Underline the current line with '='
 nnoremap <silent> <Leader>u= yypVr=
