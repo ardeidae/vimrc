@@ -155,6 +155,8 @@ let g:syntastic_enable_highlighting=1
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java', 'c', 'cpp'] }
+" allow shellcheck to follow sourced files.
+let g:syntastic_sh_shellcheck_args="-x"
 " required tools to check syntax:
 " c: gcc
 " c++: g++
