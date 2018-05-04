@@ -417,6 +417,7 @@ command! ReIndent call Preserve("normal gg=G")
 function! g:ToggleNumberMode()
 	if exists('+relativenumber')
 		if &relativenumber
+			set norelativenumber
 			set number
 			set number?
 		elseif &number
