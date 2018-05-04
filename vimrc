@@ -295,3 +295,83 @@ set splitright
 
 " }}}
 
+" spell {{{
+
+if has('spell')
+	" active / désactive la correction orthographique
+	nmap <SILENT> <F3> :set spell!<CR> :set spell?<CR>
+	set spelllang=fr
+endif
+
+" }}}
+
+" history {{{
+
+" remember more commands and search history
+set history=1000
+" use many muchos levels of undo
+set undolevels=1000
+if v:version >= 703
+	" use undofile
+	set undofile
+	if has('unix')
+		set undodir=~/.vim/tmp/undo
+	else
+		set undodir=~/_vim/tmp/undo
+	endif
+endif
+
+" }}}
+
+" backup {{{
+
+" swapfile directory
+if has('unix')
+	set directory=~/.vim/tmp/swap
+else
+	set directory=~/_vim/tmp/swap
+endif
+" don't keep backup file
+set nobackup
+set nowritebackup
+
+" }}}
+"
+" the status line {{{
+
+" turn on wild menu
+set wildmenu
+" completion mode
+set wildmode=longest:full,full
+" ignore some types of files
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,.svn,.git,CVS,.hg,*.obj,.DS_Store
+" always show current position
+set ruler
+" the commandbar height
+set cmdheight=1
+" always put a status line in, even if there is only one window
+set laststatus=2
+" Show the current mode
+set showmode
+" show the command in the status line
+set showcmd
+
+" }}}
+
+" searching {{{
+
+" highlight search results
+set hlsearch
+" incremental search
+set incsearch
+" show matching parenthesis
+set showmatch
+set matchpairs+=<:>
+set matchpairs+==:;
+set noignorecase
+" disable search display
+nmap <SILENT> <LEADER>/ :nohlsearch<CR>
+" doesn't loop when searching
+" set nowrapscan
+
+" }}}
