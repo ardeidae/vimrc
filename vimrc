@@ -142,7 +142,7 @@ nnoremap <silent> <Leader>as :AckFromSearch<CR>
 Bundle 'https://github.com/tomtom/tcomment_vim.git'
 " }}}
 
-" syntastic
+" syntastic {{{
 " Syntax checking hacks for vim
 Bundle 'https://github.com/scrooloose/syntastic.git'
 let g:syntastic_enable_signs=1
@@ -171,6 +171,11 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " json: jsonlint
 " less: less
 " yaml: js-yaml
+" }}}
+
+" ctrlp.vim {{{
+" Fuzzy file, buffer, mru, tag, etc finder.
+Bundle 'https://github.com/kien/ctrlp.vim.git'
 " }}}
 
 " }}}
