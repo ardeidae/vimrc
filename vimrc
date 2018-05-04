@@ -2,13 +2,13 @@
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles or vim +BundleInstall +qall
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles or vim +PluginInstall +qall
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed.
+" NOTE: comments after Plugin command are not allowed.
 
 " mkdir -p -m 0700 ~/.vim/tmp/{swap,undo,backup}
 " curl http://betterthangrep.com/ack-standalone > /bin/ack && chmod 0755 !#:3
@@ -30,9 +30,9 @@ let mapleader=","
 
 " Vundle manages Vundle {{{
 Plugin 'https://github.com/VundleVim/Vundle.vim.git'
-nnoremap <Leader>bi :BundleInstall<CR>
-nnoremap <Leader>bu :BundleInstall!<CR> " Because this also updates
-nnoremap <Leader>bc :BundleClean<CR>
+nnoremap <Leader>bi :PluginInstall<CR>
+nnoremap <Leader>bu :PluginInstall!<CR> " Because this also updates
+nnoremap <Leader>bc :PluginClean<CR>
 " }}}
 
 " colorschemes {{{
