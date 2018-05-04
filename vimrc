@@ -287,7 +287,7 @@ set showbreak=↪
 set linebreak
 " short messages, message for reading a file overwrites any previous message,
 " and no intro message
-set shortmess=aOI
+set shortmess=aoOI
 " split below
 set splitbelow
 " split right
