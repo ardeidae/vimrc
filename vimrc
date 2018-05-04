@@ -121,6 +121,35 @@ nnoremap <Leader>gd :Gdiff<CR>
 
 " }}}
 
+" syntastic
+" Syntax checking hacks for vim
+Bundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_balloons=1
+let g:syntastic_enable_highlighting=1
+" required tools to check syntax:
+" c: gcc
+" c++: g++
+" html: tidy
+" xhtml: tidy
+" java: javac
+" perl: perl
+" php: php
+" xml: xmllint
+"
+" install from nodejs
+" css: csslint
+" js: jslint
+" json: jsonlint
+" less: less
+" yaml: js-yaml
+" }}}
+
+" }}}
+
 " syntax {{{
 
 " add CSS3 syntax support to vim's built-in `syntax/css.vim`
