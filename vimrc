@@ -37,8 +37,6 @@ nnoremap <Leader>bc :BundleClean<CR>
 
 " colorschemes {{{
 
-" precision colorscheme for the vim text editor
-Bundle 'https://github.com/altercation/vim-colors-solarized.git'
 " a port of the monokai scheme for TextMate
 Bundle 'https://github.com/vim-scripts/molokai.git'
 " summerfruit color scheme in 256 colors
@@ -245,11 +243,7 @@ endif
 
 if has('gui_running')
 	set background=light
-	let g:solarized_termtrans=1
-	let g:solarized_termcolors=256
-	let g:solarized_visibility="high"
-	let g:solarized_contrast="high"
-	silent! colorscheme solarized
+	silent! colorscheme summerfruit256
 	" show current line
 	set guioptions=e
 	" show menu item on windows
