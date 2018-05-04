@@ -214,8 +214,6 @@ set backspace=indent,eol,start
 set autoindent
 " keyword completion
 set complete=.,w,b,u,t,i,U,kspell
-" extra characters that are parts of words
-set iskeyword+=$,@
 " only one space on joined lines
 set nojoinspaces
 " change the terminal's title
@@ -519,9 +517,27 @@ nnoremap <Leader>b<Space> :RemoveEmptyLinesBlocks<CR>
 
 " only do this part when compiled with support for autocommands
 if has("autocmd")
+	" strip trailing white spaces on write
+	autocmd BufWritePre * :StripTrailingWhiteSpaces
+
+	autocmd Filetype make setlocal noexpandtab
+	autocmd FileType yaml setlocal expandtab
+	autocmd Filetype less,css setlocal iskeyword+=-
+	autocmd Filetype php setlocal iskeyword+=$
 	" gqip to format paragraph, see :h text-objects
+	" t: Auto-wrap text using textwidth
 	autocmd FileType text setlocal textwidth=80 formatoptions+=t
 
+	" treat .rss files as XML
+	autocmd BufNewFile,BufRead *.rss setfiletype xml
+	" recognize *.txt as text files.
+	autocmd BufRead,BufNewFile *.txt setfiletype text
+	" readonly on log files
+	autocmd BufRead *.log* setlocal readonly nowrap
+
+	" specific file I use at work
+	autocmd BufRead,BufNewFile FR.txt 2match Title /^\(Lundi\|Mardi\|Mercredi\|Jeudi\|Vendredi\|Samedi\|Dimanche\)\s*[0-9]\{1,2}\/[0-9]\{1,2\}\/[0-9]\{1,4\}\s*:/
+	autocmd BufRead,BufNewFile FR.txt match MatchParen /^--------------------------------------------------------------------------------$/
 endif
 
 " }}}
