@@ -10,6 +10,8 @@
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed.
 
+" curl http://betterthangrep.com/ack-standalone > /bin/ack && chmod 0755 !#:3
+
 " Vi IMproved
 set nocompatible
 
@@ -119,6 +121,20 @@ nnoremap <Leader>gu :Git pull<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 " }}}
 
+" }}}
+
+" snipmate {{{
+" implements some of TextMate's snippets features in Vim
+Bundle 'msanders/snipmate.vim'
+" }}}
+
+" ack {{{
+" better than grep
+Bundle 'mileszs/ack.vim'
+" http://stevengharms.com/use-ack-instead-of-grep-to-parse-text-files
+" http://betterthangrep.com/documentation/
+" http://betterthangrep.com/why-ack/
+nnoremap <SILENT> <LEADER>as :AckFromSearch<CR>
 " }}}
 
 " syntastic
