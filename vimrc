@@ -10,7 +10,7 @@
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed.
 
-" mkdir -p ~/.vim/tmp/{undo,swap}
+" mkdir -p -m 0700 ~/.vim/tmp/{swap,undo}
 " curl http://betterthangrep.com/ack-standalone > /bin/ack && chmod 0755 !#:3
 
 " Vi IMproved
