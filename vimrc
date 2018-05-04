@@ -194,6 +194,9 @@ Bundle "https://github.com/ekalinin/Dockerfile.vim.git"
 " Add additional support for Ansible in VIM
 Bundle "https://github.com/chase/vim-ansible-yaml.git"
 
+" Ferm syntax highlighting (For Easy Rule Making), a frontend for iptables.
+Bundle 'https://github.com/vim-scripts/ferm.vim.git'
+
 " }}}
 
 filetype plugin indent on
