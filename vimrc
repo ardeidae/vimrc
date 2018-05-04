@@ -57,6 +57,22 @@ let g:statline_filename_relative=1
 let g:statline_show_charcode=1
 " }}}
 
+" tabular {{{
+" Vim script for text filtering and alignment
+Bundle 'godlygeek/tabular'
+nnoremap <LEADER>t= :Tabularize /=<CR>
+vnoremap <LEADER>t= :Tabularize /=<CR>
+nnoremap <LEADER>t: :Tabularize /:\zs<CR>
+vnoremap <LEADER>t: :Tabularize /:\zs<CR>
+nnoremap <LEADER>t, :Tabularize /,\zs<CR>
+vnoremap <LEADER>t, :Tabularize /,\zs<CR>
+nnoremap <LEADER>t> :Tabularize /=>\zs<CR>
+vnoremap <LEADER>t> :Tabularize /=>\zs<CR>
+nnoremap <LEADER>t- :Tabularize /-<CR>
+vnoremap <LEADER>t- :Tabularize /-<CR>
+nnoremap <LEADER>t" :Tabularize /"<CR>
+vnoremap <LEADER>t" :Tabularize /"<CR>
+" }}}
 
 " }}}
 
