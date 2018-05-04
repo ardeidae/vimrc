@@ -390,13 +390,13 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 " set a nicer foldtext function
 set foldtext=MyFoldText()
 function MyFoldText()
-  let nucolwidth = &fdc + &number*&numberwidth
-  let winwd = winwidth(0) - nucolwidth - 10
-  let foldlinecount = foldclosedend(v:foldstart) - foldclosed(v:foldstart) + 1
-  let fdnfo = string(v:foldlevel) . ", " . string(foldlinecount) . " "
-  let line =  strpart(getline(v:foldstart), 0 , winwd - len(fdnfo))
-  let fillcharcount = winwd - len(line) - len(fdnfo)
-  return line . repeat(" ",fillcharcount) . fdnfo
+	let nucolwidth = &fdc + &number*&numberwidth
+	let winwd = winwidth(0) - nucolwidth - 10
+	let foldlinecount = foldclosedend(v:foldstart) - foldclosed(v:foldstart) + 1
+	let fdnfo = string(v:foldlevel) . ", " . string(foldlinecount) . " "
+	let line =  strpart(getline(v:foldstart), 0 , winwd - len(fdnfo))
+	let fillcharcount = winwd - len(line) - len(fdnfo)
+	return line . repeat(" ",fillcharcount) . fdnfo
 endfunction
 "}}}
 
@@ -478,6 +478,9 @@ nnoremap <silent> <F4> :set invwrap<CR>:set wrap?<CR>
 
 " enable / disable textwidth
 nnoremap <silent> <F5> :call g:ToggleTextWidth()<CR>
+
+" toggle paste mode
+set pastetoggle=<F6>
 
 " Underline the current line with '='
 nnoremap <silent> <Leader>u= yypVr=
