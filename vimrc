@@ -159,6 +159,10 @@ let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_enable_balloons=1
 let g:syntastic_enable_highlighting=1
+" Passive Java checking. To check, :SyntasticCheck.
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['java'] }
 " required tools to check syntax:
 " c: gcc
 " c++: g++
