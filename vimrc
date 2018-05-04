@@ -432,6 +432,10 @@ endfunc
 
 
 " mappings {{{
+
+" disable ex mode key
+nnoremap <silent> Q <Nop>
+
 " disable F1 key
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
@@ -448,6 +452,29 @@ endif
 
 " enable / disable wrapping
 nnoremap <silent> <F4> :set invwrap<CR>:set wrap?<CR>
+
+" Underline the current line with '='
+nnoremap <silent> <Leader>u= yypVr=
+nnoremap <silent> <Leader>u- yypVr-
+nnoremap <silent> <Leader>U= yyPVr=
+nnoremap <silent> <Leader>U- yyPVr-
+
+" reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" emacs bindings in command line mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" edit / reload vimrc
+nnoremap <silent> <Leader>ve :edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>vs :source $MYVIMRC<CR>
+
+nnoremap <Leader>$ :StripTrailingWhiteSpaces<CR>
+nnoremap <Leader>= :ReIndent<CR>
+nnoremap <Leader><Space> :RemoveEmptyLines<CR>
+nnoremap <Leader>b<Space> :RemoveEmptyLinesBlocks<CR>
 
 " }}}
 
