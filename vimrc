@@ -20,11 +20,7 @@ set nocompatible
 filetype off
 
 " loading Vundle
-if has('unix')
-	set runtimepath+=~/.vim/bundle/vundle/
-else
-	set runtimepath+=~/_vim/bundle/vundle/
-endif
+set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Set leader to , must come before any <leader> mappings
@@ -83,11 +79,7 @@ Bundle 'git://github.com/scrooloose/nerdtree.git'
 " Change the NERDTree directory to the root node
 let NERDTreeChDirMode=2
 " store the bookmarks file
-if has('unix')
-	let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
-else
-	let NERDTreeBookmarksFile=expand("$HOME/_vim/NERDTreeBookmarks")
-endif
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 " show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
 " show hidden files
@@ -311,11 +303,7 @@ set undolevels=1000
 if v:version >= 703
 	" use undofile
 	set undofile
-	if has('unix')
-		set undodir=~/.vim/tmp/undo
-	else
-		set undodir=~/_vim/tmp/undo
-	endif
+	set undodir=~/.vim/tmp/undo
 endif
 
 " }}}
@@ -323,11 +311,7 @@ endif
 " backup {{{
 
 " swapfile directory
-if has('unix')
-	set directory=~/.vim/tmp/swap
-else
-	set directory=~/_vim/tmp/swap
-endif
+set directory=~/.vim/tmp/swap
 " don't keep backup file
 set nobackup
 set nowritebackup
