@@ -430,12 +430,14 @@ command! ReIndent call Preserve("normal gg=G")
 
 " switch between number and relative number
 function! g:ToggleNumberMode()
-	if &relativenumber
-		set number
-		set number?
-	else
-		set relativenumber
-		set relativenumber?
+	if exists('+relativenumber')
+		if &relativenumber
+			set number
+			set number?
+		else
+			set relativenumber
+			set relativenumber?
+		endif
 	endif
 endfunc
 
