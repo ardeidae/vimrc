@@ -252,6 +252,10 @@ if has('gui_running')
 	colorscheme solarized
 	" show current line
 	set guioptions=e
+	" show menu item on windows
+	if has("win32")
+		set guioptions+=t
+	endif
 	if exists('+cursorline')
 		set cursorline
 	endif
