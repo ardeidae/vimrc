@@ -418,12 +418,15 @@ command! RemoveEmptyLinesBlocks call Preserve("%g/^$/,/./-j")
 " reindent entire file
 command! ReIndent call Preserve("normal gg=G")
 
-" switch between number and relative number
+" switch between number, relative number and no number
 function! g:ToggleNumberMode()
 	if exists('+relativenumber')
 		if &relativenumber
 			set number
 			set number?
+		elseif &number
+			set nonumber
+			set nonumber?
 		else
 			set relativenumber
 			set relativenumber?
