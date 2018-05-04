@@ -434,6 +434,14 @@ function! g:ToggleNumberMode()
 			set relativenumber
 			set relativenumber?
 		endif
+	else
+		if &number
+			set nonumber
+			set nonumber?
+		else
+			set number
+			set number?
+		endif
 	endif
 endfunc
 
