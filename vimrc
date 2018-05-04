@@ -41,6 +41,8 @@ nnoremap <Leader>bc :BundleClean<CR>
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 " a port of the monokai scheme for TextMate
 Bundle 'git://github.com/vim-scripts/molokai.git'
+" summerfruit color scheme in 256 colors
+Bundle 'git://github.com/baeuml/summerfruit256.vim.git'
 
 " }}}
 
