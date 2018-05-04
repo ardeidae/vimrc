@@ -10,7 +10,7 @@
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed.
 
-" mkdir -p -m 0700 ~/.vim/tmp/{swap,undo}
+" mkdir -p -m 0700 ~/.vim/tmp/{swap,undo,backup}
 " curl http://betterthangrep.com/ack-standalone > /bin/ack && chmod 0755 !#:3
 
 " Vi IMproved
@@ -23,7 +23,7 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Set leader to , must come before any <leader> mappings
+" Set leader to , must come before any <Leader> mappings
 let mapleader=","
 
 " plugins {{{
@@ -319,9 +319,10 @@ endif
 
 " swapfile directory
 set directory=~/.vim/tmp/swap
-" don't keep backup file
-set nobackup
-set nowritebackup
+" keep backup file
+set backup
+set writebackup
+set backupdir=~/.vim/tmp/backup
 
 " }}}
 "
