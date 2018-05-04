@@ -107,6 +107,16 @@ nnoremap <LEADER>nf :NERDTreeFind<CR>
 nnoremap <LEADER>nc :NERDTreeClose<CR>
 " }}}
 
+
+" vim-fugitive {{{
+" a Git wrapper so awesome, it should be illegal
+Bundle 'tpope/vim-fugitive'
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>gu :Git pull<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 " }}}
 
 " }}}
