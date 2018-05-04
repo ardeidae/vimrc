@@ -36,12 +36,34 @@ nnoremap <LEADER>bu :BundleInstall!<CR> " Because this also updates
 nnoremap <LEADER>bc :BundleClean<CR>
 " }}}
 
+" colorschemes {{{
+
 " precision colorscheme for the vim text editor
 Bundle 'altercation/vim-colors-solarized'
 " a port of the monokai scheme for TextMate
 Bundle 'vim-scripts/molokai'
 
 " }}}
+
+" tools {{{
+
+" }}}
+
+" }}}
+
+" syntax {{{
+
+" add CSS3 syntax support to vim's built-in `syntax/css.vim`
+Bundle 'hail2u/vim-css3-syntax'
+
+" vim syntax for LESS (dynamic CSS)
+Bundle 'groenewege/vim-less'
+
+" }}}
+
+" }}}
+
+filetype plugin indent on
 
 " graphical {{{
 
