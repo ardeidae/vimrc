@@ -121,6 +121,11 @@ nnoremap <Leader>gu :Git pull<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 " }}}
 
+" vcscommand {{{
+" integration with many version control systems
+Bundle 'git://repo.or.cz/vcscommand'
+" }}}
+
 " }}}
 
 " snipmate {{{
@@ -135,6 +140,13 @@ Bundle 'mileszs/ack.vim'
 " http://betterthangrep.com/documentation/
 " http://betterthangrep.com/why-ack/
 nnoremap <SILENT> <LEADER>as :AckFromSearch<CR>
+" }}}
+
+" }}}
+
+" tcomment {{{
+" comment vim-plugin that also handles embedded filetypes
+Bundle 'tomtom/tcomment_vim'
 " }}}
 
 " syntastic
