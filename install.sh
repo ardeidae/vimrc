@@ -22,13 +22,14 @@ command -v git > /dev/null 2>&1 || { echo "git is required but is not installed.
 command -v vim > /dev/null 2>&1 || { echo "vim is required but is not installed. Aborting." >&2; exit; }
 
 echo "Now, we will install ${REPOS}!"
-git clone https://github.com/${REPOS}.git ${INSTALL_DIR}
-echo "Now, we will install gmarik/vundle!"
-git clone https://github.com/gmarik/vundle.git ${INSTALL_DIR}/bundle/vundle
+git clone https://github.com/${REPOS}.git "${INSTALL_DIR}"
+echo "Now, we will install Vundle.vim!"
+git clone https://github.com/VundleVim/Vundle.vim.git "${INSTALL_DIR}/bundle/Vundle.vim"
 echo "Now, we will create temporary directories!"
-mkdir -p -m 0700 ${INSTALL_DIR}/tmp/{backup,swap,undo}
+mkdir -p "${INSTALL_DIR}/tmp/"{backup,swap,undo}
+chmod 0700 "${INSTALL_DIR}/tmp/"{backup,swap,undo}
 echo "Now, we will create symlink ${VIMRC} to ${INSTALL_DIR}/vimrc!"
-ln -fs ${INSTALL_DIR}/vimrc ${VIMRC}
+ln -fs "${INSTALL_DIR}/vimrc" "${VIMRC}"
 
 echo "And finally, we will install plugins!"
 vim +BundleInstall +qall
