@@ -235,21 +235,12 @@ if has('spell')
 	set spelllang=fr
 endif
 " text formatting {{{
-" c: Auto-wrap comments using textwidth, inserting the current comment leader
-" automatically.
-" r: Automatically insert the current comment leader after hitting <Enter> in
-" Insert mode.
-" o: Automatically insert the current comment leader after hitting 'o' or 'O'
-" in Normal mode.
-" q: Allow formatting of comments with "gq". Note that formatting will not
-" change blank lines or lines containing only the comment leader.  A new
-" paragraph starts after such a line, or when the comment leader changes.
 " w: Trailing white space indicates a paragraph continues in the next line. A
 " line that ends in a non-white character ends a paragraph.
 " a: Automatic formatting of paragraphs.  Every time text is inserted or
 " deleted the paragraph will be reformatted. When the 'c' flag is present this
 " only happens for recognized comments.
-set formatoptions=c,r,o,q,w,a
+set formatoptions+=wa
 " }}}
 
 " }}}
