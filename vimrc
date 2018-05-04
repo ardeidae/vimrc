@@ -192,6 +192,50 @@ Bundle 'groenewege/vim-less'
 
 filetype plugin indent on
 
+" general {{{
+
+" utf-8 encoding
+set termencoding=utf-8
+set encoding=utf-8
+" enable modeline
+set modeline
+" lines to read for modeline
+set modelines=5
+" don't flash
+set visualbell
+" don't beep
+set noerrorbells
+" tab spaces size
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" allow backspacing over indent, eol, and the start of an insert
+set backspace=indent,eol,start
+" copy indent from current line when starting a new line
+set autoindent
+" keyword completion
+set complete=.,w,b,u,t,i,U,kspell
+" extra characters that are parts of words
+set iskeyword+=$,@
+" only one space on joined lines
+set nojoinspaces
+" change the terminal's title
+set title
+" screen will not be redrawn while executing macros
+set lazyredraw
+" fast terminal connection
+set ttyfast
+" add/substract alpha, hex and dec values, but not octal
+set nrformats=hex,alpha
+" ignore changes in amount of white space.
+set diffopt+=iwhite
+" ~ command behaves like an operator
+set tildeop
+" same column with commands G, H, M, L, gg...
+set nostartofline
+
+" }}}
+
 " graphical {{{
 
 if has('syntax')
@@ -250,6 +294,4 @@ set splitbelow
 set splitright
 
 " }}}
-
-
 
