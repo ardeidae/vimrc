@@ -505,6 +505,37 @@ nnoremap <Leader>= :ReIndent<CR>
 nnoremap <Leader><Space> :RemoveEmptyLines<CR>
 nnoremap <Leader>b<Space> :RemoveEmptyLinesBlocks<CR>
 
+" vertical split
+nnoremap <Leader>sv <C-w>v<C-w>l
+" horizontal split
+nnoremap <Leader>sh <C-w>s<C-w>j
+
+" generate HTML version current buffer using current color scheme
+map <silent> <Leader>2h :runtime! syntax/2html.vim<CR>
+
+" format paragraph
+nnoremap <Leader>q gqip
+
+" fold xml/html tag
+nnoremap <Leader>ft Vatzf
+
+" make the current file executable
+nnoremap <Leader>x :w<CR>:!chmod +x %<CR>:e<CR>
+
+" disable arrow keys to use hjkl
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+
 " }}}
 
 " autocmd {{{
@@ -532,6 +563,7 @@ if has("autocmd")
 	" specific file I use at work
 	autocmd BufRead,BufNewFile FR.txt 2match Title /^\(Lundi\|Mardi\|Mercredi\|Jeudi\|Vendredi\|Samedi\|Dimanche\)\s*[0-9]\{1,2}\/[0-9]\{1,2\}\/[0-9]\{1,4\}\s*:/
 	autocmd BufRead,BufNewFile FR.txt match MatchParen /^--------------------------------------------------------------------------------$/
+
 endif
 
 " }}}
