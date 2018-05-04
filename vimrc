@@ -74,6 +74,41 @@ nnoremap <LEADER>t" :Tabularize /"<CR>
 vnoremap <LEADER>t" :Tabularize /"<CR>
 " }}}
 
+" NERDTree {{{
+" A tree explorer plugin for vim
+Bundle 'scrooloose/nerdtree'
+" Change the NERDTree directory to the root node
+let NERDTreeChDirMode=2
+" store the bookmarks file
+if has('unix')
+	let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+else
+	let NERDTreeBookmarksFile=expand("$HOME/_vim/NERDTreeBookmarks")
+endif
+" show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+" show hidden files
+let NERDTreeShowHidden=1
+" highlight the selected entry in the tree
+let NERDTreeHighlightCursorline=1
+" single click to fold/unfold directories and double click to open files
+let NERDTreeMouseMode=2
+" show line numbers
+let NERDTreeShowLineNumbers=1
+" nerdtree window width
+let NERDTreeWinSize=40
+" NERDTree recursively opens dirs that have only one child which is also a dir
+let NERDTreeCasadeOpenSingleChildDir=1
+" don't display these kinds of files
+let NERDTreeIgnore=[ '\.class$', '\.o$', '^\.git$', '^\.svn$' ]
+
+nnoremap <LEADER>nn :NERDTreeToggle<CR>
+nnoremap <LEADER>nf :NERDTreeFind<CR>
+nnoremap <LEADER>nc :NERDTreeClose<CR>
+" }}}
+
+" }}}
+
 " }}}
 
 " syntax {{{
