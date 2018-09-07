@@ -426,7 +426,7 @@ command! RemoveEmptyLines call Preserve("%g/^\\s*$/d")
 " convert empty line blocks into one empty line
 command! RemoveEmptyLinesBlocks call Preserve("%g/^$/,/./-j")
 " reindent entire file
-command! ReIndent call Preserve("normal gg=G")
+command! ReIndent call Preserve("normal gg=G<C-o><C-o>zz")
 
 " switch between number, relative number and no number
 function! g:ToggleNumberMode()
