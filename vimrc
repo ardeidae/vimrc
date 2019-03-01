@@ -540,6 +540,14 @@ nnoremap <silent> <Leader>U- yyPVr-
 vnoremap < <gv
 vnoremap > >gv
 
+" move lines with shift-up or shift-down
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
+vnoremap <S-Up> :m '<-2<CR>gv=gv
+vnoremap <S-Down> :m '>+1<CR>gv=gv
+
 " emacs bindings in command line mode
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
