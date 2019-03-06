@@ -424,7 +424,7 @@ command! StripTrailingWhiteSpaces call Preserve("%s/\\s\\+$//e")
 " remove empty lines
 command! RemoveEmptyLines call Preserve("%g/^\\s*$/d")
 " convert empty line blocks into one empty line
-command! RemoveEmptyLinesBlocks call Preserve("%g/^$/,/./-j")
+command! RemoveEmptyLinesBlocks call Preserve('%g/^\_$\n\_^$/d')
 " reindent entire file
 command! ReIndent call Preserve("normal gg=G<C-o><C-o>zz")
 
