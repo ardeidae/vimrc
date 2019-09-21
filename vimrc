@@ -252,7 +252,7 @@ if has('spell')
 	set spelllang=fr
 endif
 
-set tabpagemax=100
+set tabpagemax=200
 
 " }}}
 
