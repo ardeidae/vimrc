@@ -43,6 +43,8 @@ Plugin 'https://github.com/vim-scripts/molokai.git'
 Plugin 'https://github.com/baeuml/summerfruit256.vim.git'
 " badwolf, a Vim color scheme
 Plugin 'https://github.com/sjl/badwolf.git'
+" A Vim colorscheme based on Github's syntax highlighting as of 2018.
+Plugin 'https://github.com/cormacrelf/vim-colors-github.git'
 
 " }}}
 
@@ -626,3 +628,11 @@ endif
 " :h c_CTRL-F to switch to command-line window
 " :h CTRL-^ to open previously edited file
 " }}}
+
+if &diff
+	" set a colorscheme improved for diff
+	colorscheme github
+	" add a mapping to exit with status 1, usefull when using git difftool or
+	" diffmerge on several files: end the diff process.
+	map Q :cquit<CR>
+endif
