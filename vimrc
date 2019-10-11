@@ -330,6 +330,13 @@ if v:version >= 703
 	set undodir=~/.vim/tmp/undo
 endif
 
+if has("patch-8.1.0360")
+	" use histogram algorithm for diff
+	set diffopt+=algorithm:histogram
+	" use indent heuristic for diff
+	set diffopt+=indent-heuristic
+endif
+
 " }}}
 
 " backup {{{
