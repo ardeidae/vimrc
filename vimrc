@@ -118,7 +118,7 @@ nnoremap <Leader>gd :Gdiff<CR>
 
 " vcscommand {{{
 " integration with many version control systems
-Plugin 'http://repo.or.cz/r/vcscommand.git'
+Plugin 'https://repo.or.cz/vcscommand.git'
 " }}}
 
 " }}}
